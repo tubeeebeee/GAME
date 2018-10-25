@@ -1,74 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bth2;
+import bth2.Vector2D;
 
-import java.util.Objects;
-
-/**
- *
- * @author 103
- */
 public class KinematicOutput {
-    private Vector2D velocity;
-    private float rotation;
-
-    public KinematicOutput() {
-    }
-
-    public KinematicOutput(Vector2D velocity, float rotation) {
-        this.velocity = velocity;
-        this.rotation = rotation;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final KinematicOutput other = (KinematicOutput) obj;
-        if (Float.floatToIntBits(this.rotation) != Float.floatToIntBits(other.rotation)) {
-            return false;
-        }
-        if (!Objects.equals(this.velocity, other.velocity)) {
-            return false;
-        }
-        return true;
-    }
-
-  
-    @Override
-    public String toString() {
-        return "KinematicOutput{" + "velocity=" + velocity + ", rotation=" + rotation + '}';
-    }
-
-    public void setVelocity(Vector2D velocity) {
-        this.velocity = velocity;
-    }
-
-    public void setRotation(float rotation) {
-        this.rotation = rotation;
-    }
-
-    public Vector2D getVelocity() {
-        return velocity;
-    }
-
-    public float getRotation() {
-        return rotation;
-    }
+	private Vector2D velocity;	
+	private double rotation;	
+	
+	public Vector2D getVelocity() {
+		return velocity;
+	}
+	
+	public void setVelocity(Vector2D velocity) {
+		this.velocity = velocity;
+	}
+	
+	public double getRotation() {
+		return rotation;
+	}
+	
+	public void setRotation(double rotation) {
+		this.rotation = rotation;
+	}
+	
+	public KinematicOutput(Vector2D velocity, double rotation) {
+		super();
+		this.velocity = velocity;
+		this.rotation = rotation;
+	}
+	
+	public KinematicOutput() {
+		super();
+	}
+	
+	@Override
+	public String toString() {
+		return "KinematicOutput [velocity=" + velocity + ", rotation=" + rotation + "]";
+	}
 }
